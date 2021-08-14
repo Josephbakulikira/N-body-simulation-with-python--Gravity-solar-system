@@ -15,10 +15,16 @@ bodies = []
 Sun = body.Body(vector.Vector2(Width//2, Height//2), 100000, vector.Vector2(), "Sun", None, (255, 255, 0), 100)
 Planet1 = body.Body(vector.Vector2(Width//2 + 200, Height//2  ), 1, vector.Vector2(0, 20), "Planet1", None, (0, 0, 255), 20, 300)
 Planet2 = body.Body(vector.Vector2(Width//2 - 300, Height//2 ), 1, vector.Vector2(0, 15), "Planet2", None, (0, 255, 255), 20, 400)
+Planet3 = body.Body(vector.Vector2(Width//2 - 380, Height//2 ), 1, vector.Vector2(0, 15), "Planet2", None, (25, 155, 255), 20, 400)
+Planet4 = body.Body(vector.Vector2(Width//2 , Height//2 - 300 ), 1, vector.Vector2(20, 0), "Planet2", None, (220, 55, 55), 20, 400)
+
 
 bodies.append(Sun)
 bodies.append(Planet1)
 bodies.append(Planet2)
+bodies.append(Planet3)
+bodies.append(Planet4)
+
 
 
 run = 1
