@@ -1,11 +1,11 @@
 import pygame
 
 def HandleEvent():
-    running = True
+    running = 1
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            running = False
+            running = 0
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_ESCAPE:
-                running = False
+                running = 0
     return running

@@ -21,19 +21,20 @@ bodies.append(Planet1)
 bodies.append(Planet2)
 
 
-run = True
-while run:
+run = 1
+while run == 1:
     screen.fill(backgroundColor)
     clock.tick(fps)
     delta_time = clock.tick(fps)/1000
-
+    pygame.display.set_caption(f"Nbody Simulation (FrameRate : {int(clock.get_fps())})")
     run = HandleEvent()
 
+    # For a correct approximation you can use time step instead of just a simple loop
     for _body in bodies:
         body.updateBody(_body, bodies)
-    for _body in bodies:
         _body.update(delta_time * speed)
         _body.draw(screen)
+
     pygame.display.flip()
 
 pygame.quit()
