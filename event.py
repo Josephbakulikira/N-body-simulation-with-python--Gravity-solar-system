@@ -1,6 +1,6 @@
 import pygame
 
-def HandleEvent():
+def HandleEvent(events):
     running = 1
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -8,4 +8,10 @@ def HandleEvent():
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_ESCAPE:
                 running = 0
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_t: # show trail toggle
+                events[0] = not events[0]
+            if event.key == pygame.K_r:
+                events[1] = not events[1] # trail is dotted toggle
+
     return running
