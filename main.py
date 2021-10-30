@@ -37,8 +37,8 @@ bodies.append(Planet4)
 last_ticks = 0; # previous milliseconds
 count_ticks = 0
 
-# 0 -> showTrail, 1 -> isDotted
-events = [True, False]
+# 0 -> showTrail, 1 -> isDotted, 2 -> pause
+events = [True, False, False]
 
 run = 1
 while run == 1:
@@ -60,12 +60,13 @@ while run == 1:
 
     count_ticks += s_ticks
     # For a correct approximation you can use time step instead of just a simple loop
-    while count_ticks > step:
-        for _body in bodies:
-            _body.Calculate(bodies)
-        for _body in bodies:
-            _body.update(step * speed)
-        count_ticks -= step
+    if events[2] == False:
+        while count_ticks > step:
+            for _body in bodies:
+                _body.Calculate(bodies)
+            for _body in bodies:
+                _body.update(step * speed)
+            count_ticks -= step
     for _body in bodies:
         _body.draw(screen, showTrail, isDotted)
 
