@@ -2,18 +2,6 @@ import pygame
 import utils.vector as vector
 from constants import *
 
-# def updateBody(current, bodies, delta_time):
-#     current.acceleration = vector.Vector2()
-#     for body in bodies:
-#         if body == current:
-#             continue
-#         r = vector.GetDistance2D(current.position, body.position) # distance
-#         g_force = (current.mass * body.mass)/ pow(r, 2)
-#         acc = g_force / current.mass # acceleration a=f/m
-#         diff = body.position - current.position
-#         current.acceleration = current.acceleration + diff.setMagnitude(acc)
-
-
 class Body:
     def __init__(self, position, mass, velocity, name="Default", sprite=None, color=(0, 0, 255), radius=20, history_limit=10):
         self.position = position

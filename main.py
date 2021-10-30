@@ -15,11 +15,18 @@ speed = 10
 
 #parameters
 Sun = body.Body(vector.Vector2(Width//2, Height//2), 100000, vector.Vector2(), "Sun", None, (255, 255, 0), 100)
-Planet1 = body.Body(vector.Vector2(Width//2 + 200, Height//2  ), 1, vector.Vector2(0, 25), "Planet1", None, (0, 0, 255), 20, 150)
-Planet2 = body.Body(vector.Vector2(Width//2 - 300, Height//2 ), 1, vector.Vector2(0, 15), "Planet2", None, (0, 255, 255), 20, 150)
-Planet3 = body.Body(vector.Vector2(Width//2 - 380, Height//2 ), 1, vector.Vector2(0, 15), "Planet2", None, (25, 155, 255), 20, 150)
-Planet4 = body.Body(vector.Vector2(Width//2 , Height//2 - 300 ), 1, vector.Vector2(20, 0), "Planet2", None, (220, 55, 55), 20, 150)
 
+Planet1 = body.Body(position=vector.Vector2(Width//2 + 200, Height//2  ),
+                    mass=1,
+                    velocity=vector.Vector2(0, 25),
+                    name="Planet1",
+                    sprite=None,
+                    color=(0, 0, 255),
+                    radius=20,
+                    history_limit=200)
+Planet2 = body.Body(vector.Vector2(Width//2 - 300, Height//2 ), 1, vector.Vector2(0, 15), "Planet2", None, (0, 255, 255), 15, 200)
+Planet3 = body.Body(vector.Vector2(Width//2 - 380, Height//2 ), 1, vector.Vector2(0, 15), "Planet2", None, (25, 155, 255), 20, 250)
+Planet4 = body.Body(vector.Vector2(Width//2 + 400, Height//2  ), 2, vector.Vector2(0, 17), "Planet2", None, (220, 55, 55), 40, 400)
 
 bodies.append(Sun)
 bodies.append(Planet1)
@@ -27,11 +34,10 @@ bodies.append(Planet2)
 bodies.append(Planet3)
 bodies.append(Planet4)
 
-
 last_ticks = 0; # previous milliseconds
 count_ticks = 0
 
-# 0 -> showTrail, 1 -> isDotted 
+# 0 -> showTrail, 1 -> isDotted
 events = [True, False]
 
 run = 1
